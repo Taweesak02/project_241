@@ -7,30 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container flex">
+    <div class="header flex">
         <header>ระบบติดตามคำสั่งซื้อ</header>
     </div>
-
-    <div class = "sub-container flex">
+    
+    <div class = "main flex">
         <ul>
-            <li>option1</li>
-            <li>option2</li>
-            <li>option3</li>
+            <li>บันทึกคำสั่งซื้อ</li>
+            <li>ติดตามสินค้า</li>
+            <li>ตารางคำสั่งซื้อ</li>
         </ul>
         <div class="display">
-            <div class="flex">
-                <div>ชื่อสินค้า</div>
-                <input type="text" name="name">
+
+            <div class="contanier">
+                <div class="form-input flex">
+                    <label>ชื่อลูกค้าที่สั่งซื้อ</label>
+                    <input class="form" type="text" name="name">
+                </div>
+                <div class="form-input flex">
+                    <label>วันที่สั่งซื้อ</label>
+                    <input class="form" type="date" name="order-date">
+                </div>
+                <div class="form-input flex">
+                    <label>สถานะการชำระเงิน</label>
+                    <select class="form" name="payment-status">
+                        <option value="unpay">รอชำระเงิน</option>
+                        <option value="pay">ชำระเงินเสร็จสิ้น</option>
+                    </select>
+                </div>
+                <div class="form-input flex">
+                    <label>สถานะการจัดส่งสินค้า</label>
+                    <select class="form" name="delivery-status">
+                        <option value="prepare">จัดเตรียมส่งสินค้า</option>
+                        <option value="deliver">กำลังส่งสินค้า</option>
+                        <option value="succes">จัดส่งสินค้าแล้ว</option>
+                    </select>
+                </div>
+                <div class="form-input flex">
+                    <label>ราคาสินค้า</label>
+                    <input class="form" type="number" name="price">
+                </div>
+                <button id="button">บันทึก</button>
             </div>
-            <div class="flex">
-                <div>ราคา</div>
-                <input type="text" name="price">
-            </div>
             
             
-            
-            วันที่
         </div>
     </div>
+   
 </body>
 </html>
