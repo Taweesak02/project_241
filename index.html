@@ -5,63 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Tracking System</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontsawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontsawesome/css/brands.min.css">
 </head>
 <body>
     <div class="header flex">
         <header>ระบบติดตามคำสั่งซื้อ</header>
     </div>
     
-    <div class = "navbar flex">
+    <div class = "body flex">
         <ul>
-            <li>บันทึกคำสั่งซื้อ</li>
-            <li>ติดตามสินค้า</li>
-            <li>ตารางคำสั่งซื้อ</li>
+            <li id="order-page">บันทึกคำสั่งซื้อ</li>
+            <li id="search-page">ติดตามสินค้า</li>
+            <li id="table-page">ตารางคำสั่งซื้อ</li>
         </ul>
         <div class="display">
-            <div class="contanier wd400">
-                <label class="head-form">บันทึกคำสั่งซื้อ</label>
+
+            <div class="container order-container flex">
+                <div class="head-form">
+                    <label>บันทึกคำสั่งซื้อ</label>
+                </div>
+                <div id="line">
+
+                </div>
+                <div class="assign-form">
+                    <div class="form-input flex">
+                        <label>ชื่อลูกค้าที่สั่งซื้อ</label>
+                        <input class="form" type="text" name="name">
+                    </div>
+                    <div class="form-input flex">
+                        <label>วันที่สั่งซื้อ</label>
+                        <input class="form" type="date" name="order-date">
+                    </div>
+
+                    <div class="flex">
+                        <div class="form-input flex">
+                            <label>สถานะการชำระเงิน</label>
+                            <select class="form" name="payment-status">
+                                <option value="unpay">รอชำระเงิน</option>
+                                <option value="pay">ชำระเงินเสร็จสิ้น</option>
+                            </select>
+                        </div>
+                        <div class="form-input flex">
+                            <label>สถานะการจัดส่งสินค้า</label>
+                            <select class="form" name="delivery-status">
+                                <option value="prepare">จัดเตรียมส่งสินค้า</option>
+                                <option value="deliver">กำลังส่งสินค้า</option>
+                                <option value="succes">จัดส่งสินค้าแล้ว</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    
+                    
+                    <div class="form-input flex">
+                        <label>ราคาสินค้า</label>
+                        <input class="form" type="number" name="price">
+                    </div>
+                    <button id="button">บันทึก</button>
+                </div>
+
+                
             </div>
 
-            <div class="contanier wd400">
-                <div class="form-input flex">
-                    <label>ชื่อลูกค้าที่สั่งซื้อ</label>
-                    <input class="form" type="text" name="name">
-                </div>
-                <div class="form-input flex">
-                    <label>วันที่สั่งซื้อ</label>
-                    <input class="form" type="date" name="order-date">
-                </div>
-                <div class="form-input flex">
-                    <label>สถานะการชำระเงิน</label>
-                    <select class="form" name="payment-status">
-                        <option value="unpay">รอชำระเงิน</option>
-                        <option value="pay">ชำระเงินเสร็จสิ้น</option>
-                    </select>
-                </div>
-                <div class="form-input flex">
-                    <label>สถานะการจัดส่งสินค้า</label>
-                    <select class="form" name="delivery-status">
-                        <option value="prepare">จัดเตรียมส่งสินค้า</option>
-                        <option value="deliver">กำลังส่งสินค้า</option>
-                        <option value="succes">จัดส่งสินค้าแล้ว</option>
-                    </select>
-                </div>
-                <div class="form-input flex">
-                    <label>ราคาสินค้า</label>
-                    <input class="form" type="number" name="price">
-                </div>
-                <button id="button">บันทึก</button>
+            <div class="container search-container">
+
             </div>
 
-            <div class="contanier">
+            <div class="container table-container">
                 <label class="head-form">ตารางคำสั่งซื้อ</label>
             </div>
-            <div class="contanier">
+            <div class="container table-container">
 
             </div>
             
         </div>
     </div>
+
+    <div class="footer">
+        <footer class="flex">
+            <a id = 'gitlink' href="https://github.com/Taweesak02" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </footer>
+    </div>
+     
+    <script src="index.js"></script>
    
 </body>
 </html>
