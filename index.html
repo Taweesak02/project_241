@@ -6,28 +6,28 @@
     <title>Order Tracking System</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fontsawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontsawesome/css/solid.css">
     <link rel="stylesheet" href="fontsawesome/css/brands.min.css">
 </head>
 <body>
     <div class="header flex">
-        <header>ระบบติดตามคำสั่งซื้อ</header>
+        <header>ระบบติดตามคำสั่งซื้อ <i class="fa-solid fa-cubes"></i></header>
+        
     </div>
     
     <div class = "body flex">
         <ul>
-            <li id="order-page">บันทึกคำสั่งซื้อ</li>
-            <li id="search-page">ติดตามสินค้า</li>
-            <li id="table-page">ตารางคำสั่งซื้อ</li>
+            <li id="order-page"></i><span><i class="fa-solid fa-cart-shopping"></i> บันทึกคำสั่งซื้อ</span></li>
+            <li id="search-page"></i><span> <i class="fa-solid fa-magnifying-glass"></i>ติดตามคำสั่งซื้อ</span></li>
+            <li id="table-page"><i class="fa-solid fa-table"></i><span>ตารางคำสั่งซื้อ</span></li>
         </ul>
         <div class="display">
 
-            <div class="container order-container flex">
+            <div class="container flex" id="order-container">
                 <div class="head-form">
                     <label>บันทึกคำสั่งซื้อ</label>
                 </div>
-                <div id="line">
-
-                </div>
+                <div id="line"></div>
                 <div class="assign-form">
                     <div class="form-input flex">
                         <label>ชื่อลูกค้าที่สั่งซื้อ</label>
@@ -56,11 +56,13 @@
                         </div>
 
                     </div>
-                    
-                    
                     <div class="form-input flex">
                         <label>ราคาสินค้า</label>
                         <input class="form" type="number" name="price">
+                    </div>
+                    <div class="form-input flex">
+                        <label>รายละเอียดสินค้า</label>
+                        <textarea class="form" name="detail" ></textarea>
                     </div>
                     <button id="button">บันทึก</button>
                 </div>
@@ -68,15 +70,22 @@
                 
             </div>
 
-            <div class="container search-container">
+            <div class="container flex" id="search-container">
+                <label class="head-form">ติดตามคำสั่งซื้อ</label>
+                
+                <div class="search-bar flex">
+                    <input placeholder="กรุณากรอกรหัสสินค้าของคุณ"></input>
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
 
+                <div class="search-message">
+
+                </div>
             </div>
 
-            <div class="container table-container">
+            <div class="container flex" id="table-container">
                 <label class="head-form">ตารางคำสั่งซื้อ</label>
-            </div>
-            <div class="container table-container">
-
+                <table id="data"></table>
             </div>
             
         </div>

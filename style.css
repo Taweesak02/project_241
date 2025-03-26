@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+:root{
+    --white:#FFFDF0;
+    --black:#393952;
+    --gray:#d6dbdd;
+    --darkblue:#4C585B;
+    --darkerblue:#2a373d;
+    --yellow:#FCC737;
+    --orange:#fc7f37;
+}
+
+::placeholder{
+    font-family:"Kanit-regular";
+}
+
 @font-face{
     font-family: "Kanit-bold";
     src: url('./fonts/Kanit-Bold.ttf');
@@ -19,8 +33,8 @@ body,html{
 }
 body{
     font-family: "Kanit-regular";
-    background-color:#d6dbdd;
-    color:#393952;
+    background-color:var(--gray);
+    color:var(--black);
 }
 
 
@@ -28,7 +42,7 @@ header{
     font-family:"Kanit-bold";
     letter-spacing:2px;
     font-size:20px;
-    color:#FFFDF0;
+    color:var(--white);
 }
 
 footer{
@@ -41,7 +55,7 @@ footer{
 }
 
 ul{ 
-    background-color:#4C585B;
+    background-color:var(--darkblue);
     margin:0;
     padding:0;
     width:15%;
@@ -49,28 +63,23 @@ ul{
 }
 li{
     height:50px;
-    background-color:#4C585B;
+    background-color:var(--darkblue);
     text-align:right;
-    color:#FFFDF0;
+    color:var(--white);
     padding:5px 1rem 5px 5px;
     align-content:center;
     box-sizing:content-box;
     list-style:none;
 }
 li:hover{
-    background-color:#2a373d;
+    background-color:var(--darkerblue);
 }
 
 li:active{
-    background-color:#acb8bd;
-    color:black;
-    outline:3px solid black;
+    background-color:var(--gray);
+    color:#393952;
+    outline:3px solid;
 
-}
-
-label{
-    width:180px;
-    flex-shrink:0;
 }
 
 input.form,select.form,button{
@@ -84,10 +93,16 @@ input.form[name="name"]{
     width:100%;
 }
 
+textarea{
+    font-family:"Kanit-regular";
+    max-width:500px;
+    max-height:200px;
+}
+
 .header{
     width:100%;
     height:80px;
-    background-image:linear-gradient(#3F7D58,#315e43);
+    background-image:linear-gradient(#315e43,#3F7D58);
     padding-left:2rem;
     align-items:center;
     position:relative;
@@ -133,22 +148,35 @@ input.form[name="name"]{
 }
 
 .container{
-    background-color:#FFFDF0;
+    background-color:var(--white);
+    width:100%;
     border-radius:10px;
     margin-top:20px;
     padding:50px;
-
     
 }
 
-.order-container{
-    justify-content:space-around;
-    gap:30px;
+.page-selected{
+    
+    border-inline-start: 10px solid var(--yellow);
 }
 
 
 .hidden{
     display:none;
+}
+
+.search-bar{
+    width:100%;
+    justify-content:center;
+    
+    input{
+        width:90%;
+        padding:20px;
+    }
+    button{
+        width:10%;
+    }
 }
 
 #line{
@@ -163,41 +191,57 @@ input.form[name="name"]{
     border-radius:10px;
     width: 100%;
     height:50px;
-    background-color:#FCC737;
+    background-color:var(--yellow);
 }
 
 #button:hover{
-    background-color:#fc7f37;
+    background-color:var(--orange);
 }
 
 #button:active{
-    background-color:#FFFDF0;
+    background-color:var(--white);
     border-style:solid;
-    border-color:#FCC737;
+    border-color:var(--yellow);
 }
 
-
-
-#order-page::before{
-    content:"🛒";
-    margin-right:10px;
+#order-container{
+    justify-content:space-around;
+    gap:30px;
+    flex-wrap:wrap;
+    label{
+        width:180px;
+        flex-shrink:0;
+    }
     
 }
 
-#search-page::before{
-    content:"🔎";
-    margin-right:10px;
+#search-container{
+    justify-content:center;
+    gap:50px;
+    flex-direction:column;
+}
+
+#order-page{
+    i{
+        margin-right:10px;
+    }
+}
+
+#search-page{
+    i{
+        margin-right:10px;
+    }
     
 }
 
-#table-page::before{
-    content:"📦";
-    margin-right:10px;
-    
-    
+#table-page{
+    i{
+        margin-right:10px;
+    }
 }
+
 #gitlink{
-    color:#FFFDF0;
+    color:var(--white);
     transition: transform 0.5s;
 }
 #gitlink:hover{
@@ -205,18 +249,24 @@ input.form[name="name"]{
 }
 
 #gitlink:active{
-    color: #c9c8bf;
+    color: var(--yellow);
 }
 
 @media only screen and (max-width:1000px){
-    .display{
-        display:flex;
+
+    .body{
         flex-direction:column;
-        width:100%;
+        justify-content:flex-start;
         align-items:center;
     }
+
     ul{
-        display:none
+        display:flex;
+        width:100%;
+    }
+    li{
+        flex-grow:1;
+        text-align:center;
     }
 
 }
