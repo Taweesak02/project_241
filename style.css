@@ -26,6 +26,24 @@
     src: url('./fonts/Kanit-Regular.ttf');
 }
 
+header{
+    font-family:"Kanit-bold";
+    letter-spacing:2px;
+    font-size:20px;
+    color:var(--white);
+    transition:0.8s;
+    a{
+        color:inherit;
+        text-decoration:none;
+    }
+}
+
+header:hover{
+    font-size:22px;
+    color:var(--yellow);
+
+}
+
 body,html{
     margin:0;
     height:100%;
@@ -38,14 +56,6 @@ body{
     color:var(--black);
 }
 
-
-header{
-    font-family:"Kanit-bold";
-    letter-spacing:2px;
-    font-size:20px;
-    color:var(--white);
-}
-
 footer{
     height:100%;
     font-size:30px;
@@ -54,6 +64,7 @@ footer{
     justify-content:flex-end;
     align-items: center;
 }
+
 
 ul{ 
     background-color:var(--darkblue);
@@ -127,6 +138,12 @@ textarea{
     
 }
 
+.display{
+    width:80%;
+    margin:0px 20px 0px 20px;
+    
+}
+
 .head-form{
     font-size:50px;
     display:block;
@@ -136,12 +153,6 @@ textarea{
 .assign-form{
     
     flex-grow:5;
-}
-
-.display{
-    width:80%;
-    margin:0px 20px 0px 20px;
-    
 }
 
 .form-input{
@@ -224,20 +235,7 @@ textarea{
     flex-direction:column;
 }
 
-#order-page{
-    i{
-        margin-right:10px;
-    }
-}
-
-#search-page{
-    i{
-        margin-right:10px;
-    }
-    
-}
-
-#table-page{
+#order-page ,#search-page ,#table-page{
     i{
         margin-right:10px;
     }

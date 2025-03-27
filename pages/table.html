@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Tracking System</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fontsawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="fontsawesome/css/solid.css">
-    <link rel="stylesheet" href="fontsawesome/css/brands.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../fontsawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../fontsawesome/css/solid.css">
+    <link rel="stylesheet" href="../fontsawesome/css/brands.min.css">
 </head>
 <body class="flex">
     <div class="header flex">
-        <header><a href="index.html">ระบบติดตามคำสั่งซื้อ <i class="fa-solid fa-cubes"></i></a></header>
+        <header><a href="../index.html">ระบบติดตามคำสั่งซื้อ <i class="fa-solid fa-cubes"></i></a></header>
     </div>
-
+    
     <div class = "body flex">
         <ul>
             <li id="order-page"></i><span><i class="fa-solid fa-cart-shopping"></i> บันทึกคำสั่งซื้อ</span></li>
             <li id="search-page"></i><span> <i class="fa-solid fa-magnifying-glass"></i>ติดตามคำสั่งซื้อ</span></li>
-            <li id="table-page"><i class="fa-solid fa-table"></i><span>ตารางคำสั่งซื้อ</span></li>
+            <li id="table-page" class="page-selected"><i class="fa-solid fa-table"></i><span>ตารางคำสั่งซื้อ</span></li>
         </ul>
+
         <div class="display">
-            <div class="container flex" id="introduce-container">
-                ระบบติดตามคำสั่งซื้อ
-                    
+            <div class="container flex" id="table-container">
+                <label class="head-form">ตารางคำสั่งซื้อ</label>
+                <table id="data"></table>
             </div>
         </div>
     </div>
@@ -34,7 +35,7 @@
         </footer>
     </div>
      
-    <script src="index.js"></script>
+    <script src="../pageswap.js"></script>
    
 </body>
 </html>

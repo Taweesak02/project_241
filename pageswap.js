@@ -6,16 +6,15 @@ const tablePageButton = document.getElementById("table-page")
 
 orderPageButton.addEventListener("click",()=>{
 
-    window.location.href = "pages/order.html"
+    window.location.href = "order.html"
 })
 
 searchPageButton.addEventListener("click",()=>{
 
-    window.location.href = "pages/search.html"
+    window.location.href = "search.html"
 })
 
 tablePageButton.addEventListener("click",()=>{
 
-    window.location.href = "pages/table.html" 
+    window.location.href = "table.html" 
 })
-
