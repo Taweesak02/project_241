@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="fontsawesome/css/solid.css">
     <link rel="stylesheet" href="fontsawesome/css/brands.min.css">
 </head>
-<body>
+<body class="flex">
     <div class="header flex">
         <header>ระบบติดตามคำสั่งซื้อ <i class="fa-solid fa-cubes"></i></header>
         
@@ -30,20 +30,24 @@
                 <div id="line"></div>
                 <div class="assign-form">
                     <div class="form-input flex">
-                        <label>ชื่อลูกค้าที่สั่งซื้อ</label>
-                        <input class="form" type="text" name="name">
+                        <label>ชื่อลูกค้าที่สั่งสินค้า</label>
+                        <input class="form" type="text" name="customer-name">
+                    </div>
+                    <div class="form-input flex">
+                        <label>ชื่อร้านค้า</label>
+                        <input class="form" type="text" name="shop-name">
                     </div>
                     <div class="form-input flex">
                         <label>วันที่สั่งซื้อ</label>
                         <input class="form" type="date" name="order-date">
                     </div>
 
-                    <div class="flex">
+                    <div id="select-form" class="flex">
                         <div class="form-input flex">
                             <label>สถานะการชำระเงิน</label>
                             <select class="form" name="payment-status">
-                                <option value="unpay">รอชำระเงิน</option>
-                                <option value="pay">ชำระเงินเสร็จสิ้น</option>
+                                <option value="unpaid">รอชำระเงิน</option>
+                                <option value="paid">ชำระเงินเสร็จสิ้น</option>
                             </select>
                         </div>
                         <div class="form-input flex">
@@ -65,6 +69,9 @@
                         <textarea class="form" name="detail" ></textarea>
                     </div>
                     <button id="button">บันทึก</button>
+                    <div id="assign-message">
+
+                    </div>
                 </div>
 
                 
@@ -78,7 +85,7 @@
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
-                <div class="search-message">
+                <div id="search-message">
 
                 </div>
             </div>
