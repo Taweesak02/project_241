@@ -1,7 +1,7 @@
 const orderPageButton = document.getElementById("order-page")
 const searchPageButton = document.getElementById("search-page")
 const tablePageButton = document.getElementById("table-page")
-
+const dashBoardPageButton = document.getElementById("dashboard-page")
 
 
 orderPageButton.addEventListener("click",()=>{
@@ -17,4 +17,8 @@ searchPageButton.addEventListener("click",()=>{
 tablePageButton.addEventListener("click",()=>{
 
     window.location.href = "table.html" 
+})
+
+dashBoardPageButton.addEventListener("click",()=>{
+    window.location.href = "dashboard.html"
 })

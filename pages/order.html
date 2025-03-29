@@ -15,10 +15,12 @@
     </div>
     
     <div class = "body flex">
+        
         <ul>
             <li id="order-page" class="page-selected"></i><span><i class="fa-solid fa-cart-shopping"></i> บันทึกคำสั่งซื้อ</span></li>
             <li id="search-page"></i><span> <i class="fa-solid fa-magnifying-glass"></i>ติดตามคำสั่งซื้อ</span></li>
             <li id="table-page"><i class="fa-solid fa-table"></i><span>ตารางคำสั่งซื้อ</span></li>
+            <li id="dashboard-page"><i class="fa-solid fa-chart-pie"></i><span>วิเคราะห์ข้อมูล</span></li>
         </ul>
         <div class="display">
 
@@ -45,16 +47,16 @@
                         <div class="form-input flex">
                             <label>สถานะการชำระเงิน</label>
                             <select class="form" name="payment-status">
-                                <option value="unpaid">รอชำระเงิน</option>
-                                <option value="paid">ชำระเงินเสร็จสิ้น</option>
+                                <option value="รอชำระเงิน">รอชำระเงิน</option>
+                                <option value="ชำระเงินเสร็จสิ้น">ชำระเงินเสร็จสิ้น</option>
                             </select>
                         </div>
                         <div class="form-input flex">
                             <label>สถานะการจัดส่งสินค้า</label>
                             <select class="form" name="delivery-status">
-                                <option value="prepare">จัดเตรียมส่งสินค้า</option>
-                                <option value="deliver">กำลังส่งสินค้า</option>
-                                <option value="succes">จัดส่งสินค้าแล้ว</option>
+                                <option value="จัดเตรียมส่งสินค้า">จัดเตรียมส่งสินค้า</option>
+                                <option value="กำลังส่งสินค้า">กำลังส่งสินค้า</option>
+                                <option value="จัดส่งสินค้าแล้ว">จัดส่งสินค้าแล้ว</option>
                             </select>
                         </div>
 
@@ -65,10 +67,10 @@
                     </div>
                     <div class="form-input flex">
                         <label>รายละเอียดสินค้า</label>
-                        <textarea class="form" name="detail" ></textarea>
+                        <textarea class="form" id="detail" ></textarea>
                     </div>
-                    <button id="button">บันทึก</button>
-                    <div id="assign-message"></div>
+                    <button onclick="submitData()" id="button">บันทึก</button>
+                    <div id="message"></div>
                 </div>
             </div>
             
@@ -80,8 +82,9 @@
             <a id = 'gitlink' href="https://github.com/Taweesak02" target="_blank"><i class="fa-brands fa-github"></i></a>
         </footer>
     </div>
-     
-    <script src="../pageswap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="../scripts/order.js"></script>
+    <script src="../scripts/pageswap.js"></script>
    
 </body>
 </html>
