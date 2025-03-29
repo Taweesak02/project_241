@@ -10,6 +10,7 @@
     --darkerblue:#2a373d;
     --yellow:#FCC737;
     --orange:#fc7f37;
+    --green:#315e43;
 }
 
 ::placeholder{
@@ -117,7 +118,7 @@ textarea{
 .header{
     width:100%;
     height:80px;
-    background-image:linear-gradient(#315e43,#3F7D58);
+    background-image:linear-gradient(var(--green),#3F7D58);
     padding-left:2rem;
     flex-shrink:0;
     align-items:center;
@@ -205,17 +206,38 @@ textarea{
     background-color:rgba(223, 75, 75, 0.93);
 }
 
+#searching-result{
+    padding:20px;
+    border:2px solid var(--black);
+    width:100%;
+    
+
+    .flex{
+        
+        gap:20px;
+        label{
+            width:200rem;
+        }
+
+        
+    }
+    
+    
+}
+
+#message-header{
+    font-family:'Kanit-bold';
+    text-decoration:underline;
+}
+
+
 #message{
     padding:30px;
     margin:30px 10px;
     border-radius:20px;
     width:100%;
 
-    div{
-        font-family:'Kanit-bold';
-        text-decoration:underline;
-    }
-
+    
     ul{
         flex-direction:column;
         width:100%;
@@ -299,8 +321,51 @@ textarea{
 
 #search-container{
     justify-content:center;
-    gap:50px;
+    gap:20px;
     flex-direction:column;
+}
+
+#table-container{
+    flex-direction:column;
+    gap:30px;
+    table,th,td{
+        
+        padding:10px 20px;
+        
+        border-collapse: collapse;   
+    }
+
+    table{
+        border-style: solid;
+        border-color: var(--green);
+        border-radius:50px;
+        border-size: 5px;
+    }
+
+    th{
+        background-color:var(--green);
+        color:var(--white);
+        
+    }
+    tr{
+        transition:0.2s;
+    }
+
+    tr:nth-child(odd){
+        background-color: var(--gray);
+    }
+
+    tr:hover:not([id='table-head']){
+
+        background-color:var(--yellow);
+    }
+
+    tr:active:not([id='table-head']){
+        background-color:var(--orange);
+    }
+
+    
+    
 }
 
 #order-page ,#search-page ,#table-page ,#dashboard-page{
@@ -320,6 +385,7 @@ textarea{
 #gitlink:active{
     color: var(--yellow);
 }
+
 @media only screen and (max-width:1465px){
     #line{
         border:none;

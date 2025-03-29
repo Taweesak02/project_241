@@ -31,24 +31,27 @@ const submitData = async()=>{
 
         message.classList.add('succes')
         message.classList.remove('danger')
+        message.classList.remove('hidden')
+        
         message.innerHTML = `ข้อมูลถูกบันทึกเรียบร้อย`
         
     }catch(err){
         message.classList.add('danger')
         message.classList.remove('succes')
+        message.classList.remove('hidden')
         
         
         err.message = err.response.data.message
         errors = err.response.data.error
 
-        let htmldata = `<div>${err.message}</div><ul>`
+        let htmldata = `<div id='message-header'>${err.message}</div><ul>`
 
         for(let i = 0;i < errors.length;i++){
             htmldata += `<li>${errors[i]}</li>`
         }
 
         htmldata += `</ul>`
-        console.log(htmldata)
+        
         message.innerHTML = htmldata
         
     }
