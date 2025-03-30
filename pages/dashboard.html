@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Tracking System</title>
+    <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../fontsawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../fontsawesome/css/solid.css">
@@ -24,7 +25,18 @@
         <div class="display">
             <div class="container flex" id="dashboard-container">
                 <label class="head-form">Dashboard</label>
-                <table id="data"></table>
+                <div class="grid">
+                    
+                    <div class="item1"><canvas id="payment-status"></canvas></div>
+                    <div class="item2"><canvas id="chart"></canvas></div>
+                    <div class="item3"><canvas id="delivery-status"></canvas></div>
+                    <div class="item4">จำนวนรายการสั่งซื้อทั้งหมด</div>
+                    <div class="item5">ราคาเฉลี่ยทั้งหมด</div>
+                    <div class="item6">จำนวนลูกค้าทั้งหมด</div>
+                    
+                </div>
+                
+                
             </div>
         </div>
     </div>
@@ -32,6 +44,8 @@
     <div id="load-footer"></div>
      
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src = "../scripts/dashboard.js"></script>
     <script src="../scripts/index.js"></script>
    
 </body>

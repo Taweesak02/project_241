@@ -12,7 +12,7 @@
 </head>
 <body class="flex">
 
-    <div id="edit-mode">
+    <div id="edit-mode" class="hidden">
         <div class="container assign-form">
             <label id="message-header">รายละเอียดรายการสั่งสินค้า</label>
             <div id="info">
@@ -54,8 +54,11 @@
                         <label>รายละเอียดสินค้า</label>
                         <textarea class="form" id="detail" ></textarea>
                     </div>
-                    <button id="button">บันทึก</button>
-                    <div id="message" class="hidden"></div>
+                    <div class="form-input flex" id="button-footer">
+                        <button id="submitBtn">บันทึก</button>
+                        <button id="returnBtn" onclick="returnMode()">ย้อนกลับ</button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -63,17 +66,21 @@
 
     <div id="option-container" class="hidden">
         <div class="container flex" id="option-selected-form" >
+            <div id="head-option">
+                <div id="close-button">
+                    <button onclick="exitMode()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div id="body-option" class="flex">
+                <label id="message-header">กรุณาเลือกคำสั่งที่ต้องการ</label>
 
-            <div id="close-button">
-                <button onclick="exitMode()"><i class="fa-solid fa-xmark"></i></button>
+                <div id="option" class="flex">
+                    <button id="editBtn">แก้ไขรายการ</button>
+                    <button id="delBtn">ลบรายการ</button>
+                </div>
             </div>
 
-            <label id="message-header">กรุณาเลือกคำสั่งที่ต้องการ</label>
-
-            <div id="option" class="flex">
-                <button id="editBtn">แก้ไขรายการ</button>
-                <button id="delBtn">ลบรายการ</button>
-            </div>
+                
         </div>
     </div>
 
@@ -91,7 +98,10 @@
             <div class="container flex" id="table-container">
                 <label class="head-form">ตารางคำสั่งซื้อ</label>
                 <div id="message" class="hidden"></div>
-                <table id="data"></table>
+                <div id="overflow-table">
+                    <table id="data"></table>
+                </div>
+                
             </div>
         </div>
     </div>

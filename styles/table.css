@@ -4,7 +4,6 @@
     label{
         width:50%;
         
-        
     }
     input.form[name="customer-name"],input.form[name="shop-name"]{
         width:50%;
@@ -23,7 +22,7 @@
 .filterdark{
     background-color:rgba(0,0,0,0.5);
     
-    > div:not([id='option-container']){ 
+    > div:not([id='option-container']):not([id='edit-mode']){ 
         filter: brightness(50%);
         pointer-events: none;
     }
@@ -39,33 +38,40 @@ button{
     
 }
 
-button[id="editBtn"]{
+button[id="editBtn"],button[id="submitBtn"]{
     background-color:var(--lightgreen);
 }
 
-button[id="editBtn"]:hover{
+button[id="editBtn"]:hover,button[id="submitBtn"]:hover{
     background-color:rgb(57, 154, 50);
 }
 
-button[id="editBtn"]:active{
+button[id="editBtn"]:active,button[id="submitBtn"]:active{
     background-color:var(--white);
     border-style:solid;
     border-color:var(--lightgreen);
 }
 
-button[id="delBtn"]{
+button[id="delBtn"],button[id="returnBtn"]{
     background-color:var(--red);
 }
 
-button[id="delBtn"]:hover{
+button[id="delBtn"]:hover,button[id="returnBtn"]:hover{
     background-color:rgb(180, 32, 32);
 }
 
-button[id="delBtn"]:active{
+button[id="delBtn"]:active,button[id="returnBtn"]:active{
     background-color:var(--white);
     border-style:solid;
     border-color:var(--red);
 }
+
+#button-footer{
+    justify-content:space-around;
+
+    
+}
+
 
 #edit-mode{
     width:50%;
@@ -87,6 +93,8 @@ button[id="delBtn"]:active{
     top:50%;
     left:50%;
     z-index:1;
+
+    
 }
 
 #message-header{
@@ -96,8 +104,9 @@ button[id="delBtn"]:active{
 #table-container{
     flex-direction:column;
     gap:30px;
+    
+
     table,th,td{
-        
         padding:10px 20px;
         border-collapse: collapse;   
     }
@@ -133,10 +142,13 @@ button[id="delBtn"]:active{
  
 }
 
+#overflow-table{
+    overflow-x:auto;
+}
+
 #close-button{
     display:flex;
     justify-content:flex-end;
-    margin-bottom:20px;
 
     button{
         background-color:var(--red);
@@ -158,8 +170,23 @@ button[id="delBtn"]:active{
 #option-selected-form{
     flex-direction:column;
     text-align:center;
-    gap:20px;
+    padding:0px;
+
+    #head-option{
+        border-radius:10px 10px 0 0;
+        background-color:var(--gray);
+        height:10%;
+        
+    }
+    
+    #body-option{
+        flex-direction:column;
+        gap:30px;
+        padding:30px;
+    }
 }
+
+
 
 #option{
     justify-content:space-around;
