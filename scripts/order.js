@@ -41,8 +41,9 @@ const submitData = async()=>{
         message.classList.remove('hidden')
         
         
-        err.message = err.response.data.message
-        errors = err.response.data.error
+        err.message = err.response?.data?.message? err.response.data.message : "โปรดตรวจสอบสัญญาณ"
+        errors = err.response?.data?.error?err.response.data.error: ""
+        
 
         let htmldata = `<div id='message-header'>${err.message}</div><ul>`
 

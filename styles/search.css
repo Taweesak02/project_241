@@ -1,0 +1,39 @@
+.search-bar{
+    width:100%;
+    justify-content:center;
+    
+    input{
+        width:90%;
+        padding:20px;
+    }
+    button{
+        width:10%;
+    }
+}
+
+#search-container{
+    justify-content:center;
+    gap:20px;
+    flex-direction:column;
+}
+
+
+#searching-result{
+    padding:20px;
+    border:2px solid var(--black);
+    width:100%;
+    
+
+    .flex{
+        
+        gap:20px;
+        label{
+            width:200rem;
+        }
+
+        
+    }
+    
+    
+}
+

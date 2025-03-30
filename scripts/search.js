@@ -23,6 +23,8 @@ const searchingData = async()=>{
 
         infoDetailDOM.classList.remove("hidden")
 
+        const formattedDate = new Date(response.data.orderDate).toLocaleDateString('en-GB');
+
         let htmldata = `<div id = 'searching-result'>
                             <label id="message-header">รายละเอียดรายการสั่งสินค้า</label>
                             <div class='flex'>
@@ -35,7 +37,7 @@ const searchingData = async()=>{
                             </div>
                             <div class='flex'>
                                 <label>วันที่สั่งซื้อ</label>
-                                <label>${response.data.orderDate}</label>
+                                <label>${formattedDate}</label>
                             </div>
                             <div class='flex'>
                                 <label>สถานะการชำระเงิน</label>

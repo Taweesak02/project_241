@@ -4,12 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Tracking System</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/table.css">
     <link rel="stylesheet" href="../fontsawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../fontsawesome/css/solid.css">
     <link rel="stylesheet" href="../fontsawesome/css/brands.min.css">
 </head>
 <body class="flex">
+
+    <div id="edit-mode">
+        <div class="container assign-form">
+            <label id="message-header">รายละเอียดรายการสั่งสินค้า</label>
+            <div id="info">
+                <div>
+                    <div class="form-input flex">
+                        <label>ชื่อลูกค้าที่สั่งสินค้า</label>
+                        <input class="form" type="text" name="customer-name">
+                    </div>
+                    <div class="form-input flex">
+                        <label>ชื่อร้านค้า</label>
+                        <input class="form" type="text" name="shop-name">
+                    </div>
+                    <div class="form-input flex">
+                        <label>วันที่สั่งซื้อ</label>
+                        <input class="form" type="date" name="order-date">
+                    </div>
+  
+                    <div class="form-input flex">
+                        <label>สถานะการชำระเงิน</label>
+                        <select class="form" name="payment-status">
+                            <option value="รอชำระเงิน">รอชำระเงิน</option>
+                            <option value="ชำระเงินเสร็จสิ้น">ชำระเงินเสร็จสิ้น</option>
+                        </select>
+                    </div>
+
+                    <div class="form-input flex">
+                        <label>สถานะการจัดส่งสินค้า</label>
+                        <select class="form" name="delivery-status">
+                            <option value="จัดเตรียมส่งสินค้า">จัดเตรียมส่งสินค้า</option>
+                            <option value="กำลังส่งสินค้า">กำลังส่งสินค้า</option>
+                            <option value="จัดส่งสินค้าแล้ว">จัดส่งสินค้าแล้ว</option>
+                        </select>
+                    </div>
+                    <div class="form-input flex">
+                        <label>ราคาสินค้า</label>
+                        <input class="form" type="number" name="price">
+                    </div>
+                    <div class="form-input flex">
+                        <label>รายละเอียดสินค้า</label>
+                        <textarea class="form" id="detail" ></textarea>
+                    </div>
+                    <button id="button">บันทึก</button>
+                    <div id="message" class="hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="option-container" class="hidden">
+        <div class="container flex" id="option-selected-form" >
+
+            <div id="close-button">
+                <button onclick="exitMode()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <label id="message-header">กรุณาเลือกคำสั่งที่ต้องการ</label>
+
+            <div id="option" class="flex">
+                <button id="editBtn">แก้ไขรายการ</button>
+                <button id="delBtn">ลบรายการ</button>
+            </div>
+        </div>
+    </div>
 
     <div id="load-header"></div>
     
@@ -24,6 +90,7 @@
         <div class="display">
             <div class="container flex" id="table-container">
                 <label class="head-form">ตารางคำสั่งซื้อ</label>
+                <div id="message" class="hidden"></div>
                 <table id="data"></table>
             </div>
         </div>

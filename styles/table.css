@@ -1,0 +1,166 @@
+.form-input{
+    
+
+    label{
+        width:50%;
+        
+        
+    }
+    input.form[name="customer-name"],input.form[name="shop-name"]{
+        width:50%;
+        
+    }
+}
+
+.assign-form{
+    #message-header{
+        display:block;
+        font-size:20px;
+        margin-bottom:50px;
+    }
+}
+
+.filterdark{
+    background-color:rgba(0,0,0,0.5);
+    
+    > div:not([id='option-container']){ 
+        filter: brightness(50%);
+        pointer-events: none;
+    }
+    
+    
+}
+button{
+    font-size:15px;
+    height:50px;
+    border:none;
+    border-radius:10px;
+    width:40%;
+    
+}
+
+button[id="editBtn"]{
+    background-color:var(--lightgreen);
+}
+
+button[id="editBtn"]:hover{
+    background-color:rgb(57, 154, 50);
+}
+
+button[id="editBtn"]:active{
+    background-color:var(--white);
+    border-style:solid;
+    border-color:var(--lightgreen);
+}
+
+button[id="delBtn"]{
+    background-color:var(--red);
+}
+
+button[id="delBtn"]:hover{
+    background-color:rgb(180, 32, 32);
+}
+
+button[id="delBtn"]:active{
+    background-color:var(--white);
+    border-style:solid;
+    border-color:var(--red);
+}
+
+#edit-mode{
+    width:50%;
+
+    filter: none;
+    transform: translate(-50%, -50%);
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index:2;
+
+}
+
+#option-container{
+    
+    filter: none;
+    transform: translate(-50%, -50%);
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index:1;
+}
+
+#message-header{
+    font-size:30px;
+}
+
+#table-container{
+    flex-direction:column;
+    gap:30px;
+    table,th,td{
+        
+        padding:10px 20px;
+        border-collapse: collapse;   
+    }
+
+    table{
+        border-style: solid;
+        border-color: var(--green);
+        border-radius:50px;
+        
+    }
+
+    th{
+        background-color:var(--green);
+        color:var(--white);
+        
+    }
+    tr{
+        transition:0.2s;
+    }
+
+    tr:nth-child(odd){
+        background-color: var(--gray);
+    }
+
+    tr:hover:not([id='table-head']){
+
+        background-color:var(--yellow);
+    }
+
+    tr:active:not([id='table-head']){
+        background-color:var(--orange);
+    }
+ 
+}
+
+#close-button{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:20px;
+
+    button{
+        background-color:var(--red);
+        width:20%;
+    }
+
+    button:hover{
+        
+        background-color:rgb(180, 32, 32);
+    }
+
+    button:active{
+        background-color:var(--white);
+        border-style:solid;
+        border-color:var(--red);
+    }
+}
+
+#option-selected-form{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+}
+
+#option{
+    justify-content:space-around;
+}
