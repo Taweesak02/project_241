@@ -55,7 +55,12 @@ const searchingData = async()=>{
                                 <label>รายละเอียดสินค้า</label>
                                 <label>${response.data.productDetail}</label>
                             </div>
-                       </div>`
+                            
+                       </div>
+                        
+                        <button id="dowloadfile" onclick='downloadPDF()'>ดาวน์โหลดไฟล์ pdf</button>
+                        `
+                       
         message.innerHTML = "ค้นหารายการสั่งสินค้าเสร็จสิ้น"
         infoDetailDOM.innerHTML = htmldata
 
@@ -65,8 +70,12 @@ const searchingData = async()=>{
         message.classList.remove('hidden')
 
         infoDetailDOM.classList.add('hidden')
-        
+
         message.innerHTML = 'ไม่พบหมายเลขสินค้า กรุณากรอกข้อมูลให้ถูกต้อง'
         
     }
 }
+
+
+
+

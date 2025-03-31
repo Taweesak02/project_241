@@ -44,13 +44,29 @@ const refresh = async()=>{
         for(let i = 0;i < response.data.length;i++){
             let orders = response.data[i]
             const formattedDate = new Date(orders.orderDate).toLocaleDateString('en-GB')
+
+            let paymentStatusShow,deliveryStatusShow
+
+            switch(orders.paymentStatus){ 
+                case 'ชำระเงินเสร็จสิ้น': paymentStatusShow = 'paidstatus'
+                    break
+                default : paymentStatusShow = 'unpaidstatus'
+            }
+            switch(orders.deliveryStatus){ 
+                case 'จัดส่งสินค้าแล้ว': deliveryStatusShow = 'deliveredstatus'
+                    break
+                case 'กำลังส่งสินค้า': deliveryStatusShow = 'sendingstatus'
+                    break
+                default : deliveryStatusShow = 'preparestatus'
+            }
+
             htmldata += `<tr>
                             <td>${orders.orderID}</td>
                             <td>${orders.customerName}</td>
                             <td>${orders.shopName}</td>
                             <td>${formattedDate}</td>
-                            <td>${orders.paymentStatus}</td>
-                            <td>${orders.deliveryStatus}</td>
+                            <td><div id = ${paymentStatusShow}>${orders.paymentStatus}</div></td>
+                            <td><div id = ${deliveryStatusShow}>${orders.deliveryStatus}</div></td>
                             <td>${orders.price}</td>
                             <td>${orders.productDetail}</td>
                          </tr>   

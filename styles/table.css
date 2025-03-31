@@ -118,6 +118,25 @@ button[id="delBtn"]:active,button[id="returnBtn"]:active{
         
     }
 
+    #paidstatus,#deliveredstatus{
+        text-align:center;
+        border-radius:20px;
+        background-color:var(--lightgreen)
+    }
+
+    #sendingstatus{
+        text-align:center;
+        border-radius:20px;
+        background-color:var(--yellow)
+    }
+
+    #unpaidstatus,#preparestatus{
+        text-align:center;
+        border-radius:20px;
+        background-color:var(--red)
+    }
+
+
     th{
         background-color:var(--green);
         color:var(--white);
@@ -139,6 +158,8 @@ button[id="delBtn"]:active,button[id="returnBtn"]:active{
     tr:active:not([id='table-head']){
         background-color:var(--orange);
     }
+
+    
  
 }
 
@@ -191,3 +212,4 @@ button[id="delBtn"]:active,button[id="returnBtn"]:active{
 #option{
     justify-content:space-around;
 }
+

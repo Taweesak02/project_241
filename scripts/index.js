@@ -8,7 +8,7 @@ const footer = document.getElementById("load-footer")
 
 window.onload = ()=>{
     header.innerHTML = `<div class="header flex">
-                            <header><a href="index.html">ระบบติดตามคำสั่งซื้อ <i class="fa-solid fa-cubes"></i></a></header>
+                            <header><a href="index.html"><i class="fa-solid fa-cubes"></i>  ระบบติดตามคำสั่งซื้อ</a></header>
                         </div>`
     footer.innerHTML = `<div class="footer">
                             <footer class="flex">
