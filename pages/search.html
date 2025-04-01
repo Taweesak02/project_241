@@ -43,35 +43,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="../scripts/search.js"></script>
     <script src="../scripts/index.js"></script>
-    <script>
-        
-        const downloadPDF = () => {
-            
-            
 
-            const content = document.getElementById('searching-result');
-
-            const options = {
-            margin: 1,
-            filename: 'order-details.pdf',
-            image: { type: 'jpeg', quality: 1 },
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            }
-
-            html2pdf().from(content).toPdf()
-            .get('pdf')
-            .then((pdf) => {
-                const pdfBlob = pdf.output('blob');
-                const pdfUrl = URL.createObjectURL(pdfBlob);
-                window.open(pdfUrl);
-            })
-
-            
-        
-
-        
-        }
-    </script>
 </body>
 </html>
