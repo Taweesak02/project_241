@@ -3,7 +3,7 @@ const bodyparset = require('body-parser');
 const mysql = require('mysql2/promise');
 const app = express();
 const cors = require('cors');
-const e = require('express');
+const jwt =  require('jsonwebtoken')
 
 const port = 8000; 
 
@@ -121,7 +121,7 @@ app.put('/Orders/:orderID',async(req,res)=>{
     })
   }catch(err){
     res.status(500).json({
-      message: "ผิดพลาด",
+      message: "ผิดพลาดในการแก้ไข",
       data:err.message
     })
   }
@@ -150,3 +150,44 @@ app.listen(port, async (req, res) => {
   await initMySQL()
   console.log(`Http Server is running on port ${port}`)
 })
+
+
+app.post('/Login', async (req, res) => {
+  
+  try{
+    const {user,password} = req.body
+  
+    const [userDatas] = await conn.query('SELECT userName,password FROM Users WHERE userName = ?',[user])
+
+    if(userDatas.length === 0){
+      res.clearCookie("authToken");
+      return res.status(404).json({ message: "Not found user" });
+    }
+    
+    if(userDatas[0].password != password){
+      res.clearCookie("authToken");
+      return res.status(404).json({ message: "password incorrect" });
+      
+    }
+    
+    const token = jwt.sign({userName:user,password:password}, 'tea', { expiresIn: '1h' })
+    res.cookie('authToken', token,{httpOnly: true})
+    res.json({ message: 'Login successful'})
+    
+    
+    
+  }catch(err){
+    res.clearCookie("authToken");
+    res.json({
+      message:"failed to login",
+      error:err.message,
+
+    })
+  }
+})
+
+
+
+
+
+
