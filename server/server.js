@@ -52,8 +52,15 @@ const validateData = (orderData)=>{
 }
 
 app.get('/Orders', async (req, res) => {
-  const results = await conn.query('SELECT * FROM Orders')
-  res.json(results[0])
+  try{ 
+    const results = await conn.query('SELECT * FROM Orders')
+    res.json(results[0])
+  }catch(err){
+    res.json({
+      message:"ไม่สามารถ get ได้",
+      error:err.message
+    })
+  }
 })
 
 app.get('/Orders/:orderID',async(req,res)=>{
@@ -68,10 +75,9 @@ app.get('/Orders/:orderID',async(req,res)=>{
     res.json(results[0][0])
 
   }catch (err) {
-    console.log('error', err.message)
     let statusCode = err.statusCode || 500
     res.status(500).json({
-      error: "something went wrong",
+      error: "ไม่สามารถ get id ได้",
       errorMessage: err.message
     })
   }
@@ -98,7 +104,7 @@ app.post('/Orders',async(req,res)=>{
 
 
   }catch(err){
-    const errorMessage = err.message || "Something Went Wrong"
+    const errorMessage = err.message || "ไม่สามารถเพิ่มข้อมูลได้"
     const errors = err.errors || []
     res.status(500).json({
       message: errorMessage,
@@ -147,10 +153,20 @@ app.delete('/Orders/:orderID',async(req,res) =>{
 })
 
 app.listen(port, async (req, res) => {
-  await initMySQL()
-  console.log(`Http Server is running on port ${port}`)
+
+  try{  
+    await initMySQL()
+    console.log(`Http Server is running on port ${port}`)
+  }catch(err){
+    res.json({
+      message:"เชื่อมต่อไม่สำเร็จ",
+      error:err.message
+    })
+  }
 })
 
+
+//login
 
 app.post('/Login', async (req, res) => {
   

@@ -91,6 +91,10 @@ const searchingData = async()=>{
                                 <label>รายละเอียดสินค้า</label>
                                 <label>${response.data.productDetail}</label>
                             </div>
+                            <div class='flex'>
+                                <label>วันที่พิมพ์รายการสั่งซื้อ</label>
+                                <label>${new Date().toLocaleDateString('en-GB')}</label>
+                            </div>
                             
                        </div>
                         `
@@ -123,7 +127,8 @@ const downloadPDF = () => {
         image: { type: 'jpeg', quality: 1 }, // High-quality images
         html2canvas: { scale: 2, useCORS: true }, // Improve rendering quality
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' } // Set to landscape
-    };
+    }
+
     html2pdf().set(options).from(htmlpdf).toPdf()
     .get('pdf')
     .then((pdf) => {

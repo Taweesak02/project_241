@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Table</title>
+    <link rel="icon" type="image/x-icon" href="../picture/table.svg">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../styles/table.css">
     <link rel="stylesheet" href="../fontsawesome/css/fontawesome.min.css">
@@ -88,15 +89,15 @@
     
     <div class = "body flex">
         <ul>
-            <li id="search-page"></i><span> <i class="fa-solid fa-magnifying-glass"></i>ติดตามคำสั่งซื้อ</span></li>
-            <li id="order-page"></i><span><i class="fa-solid fa-cart-shopping"></i> บันทึกคำสั่งซื้อ</span></li>
+            <li id="search-page"><span> <i class="fa-solid fa-magnifying-glass"></i>ติดตามคำสั่งซื้อ</span></li>
+            <li id="order-page"><span><i class="fa-solid fa-cart-shopping"></i> บันทึกคำสั่งซื้อ</span></li>
             <li id="table-page" class="page-selected"><i class="fa-solid fa-table"></i><span>ตารางคำสั่งซื้อ</span></li>
             <li id="dashboard-page"><i class="fa-solid fa-chart-pie"></i><span>วิเคราะห์ข้อมูล</span></li>
         </ul>
 
         <div class="display">
             <div class="container flex" id="table-container">
-                <label class="head-form">ตารางคำสั่งซื้อ</label>
+                <label class="head-form">ตารางคำสั่งซื้อ <i class="fa-solid fa-table"></i></label>
                 <div id="message" class="hidden"></div>
                 <div id="overflow-table">
                     <table id="data"></table>

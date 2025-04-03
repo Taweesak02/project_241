@@ -39,7 +39,6 @@ button{
 }
 
 
-
 button[id="editBtn"],button[id="submitBtn"]{
     background-color:var(--lightgreen);
 }

@@ -20,12 +20,11 @@
 
     padding:20px;
     font-size:20px;
-    width:800px;
-    height:600px;
+    height:100vh;
 
     .flex{
         
-        gap:50px;
+        gap:80px;
         label{
             width:200rem;
         }

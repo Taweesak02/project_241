@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
+    <link rel="icon" type="image/x-icon" href="../picture/dashboard.svg">
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../fontsawesome/css/fontawesome.min.css">
@@ -16,16 +17,16 @@
     
     <div class = "body flex">
         <ul>
-            <li id="search-page"></i><span> <i class="fa-solid fa-magnifying-glass"></i>ติดตามคำสั่งซื้อ</span></li>
-            <li id="order-page"></i><span><i class="fa-solid fa-cart-shopping"></i> บันทึกคำสั่งซื้อ</span></li>
+            <li id="search-page"><span> <i class="fa-solid fa-magnifying-glass"></i>ติดตามคำสั่งซื้อ</span></li>
+            <li id="order-page"><span><i class="fa-solid fa-cart-shopping"></i> บันทึกคำสั่งซื้อ</span></li>
             <li id="table-page"><i class="fa-solid fa-table"></i><span>ตารางคำสั่งซื้อ</span></li>
             <li id="dashboard-page" class="page-selected"><i class="fa-solid fa-chart-pie"></i><span>วิเคราะห์ข้อมูล</span></li>
         </ul>
 
         <div class="display">
             <div class="container flex" id="dashboard-container">
-                <label class="head-form">Dashboard</label>
-                <div class="grid">
+                <label class="head-form">วิเคราะห์ข้อมูล <i class="fa-solid fa-chart-pie"></i></label>
+                <div class="grid" id="dashboard-display">
                     
                     <div class="item1"><canvas id="payment-status"></canvas></div>
                     <div class="item2"><canvas id="chart"></canvas></div>

@@ -22,6 +22,12 @@ const loadData = async()=>{
     
   }catch(err){
     console.log(err.error)
+    const dasboardDisplay = document.getElementById("dashboard-display")
+    dasboardDisplay.innerHTML="มีปัญหากับการโหลดข้อมูล"
+    dasboardDisplay.style.display = "Block"
+    dasboardDisplay.style.textDecoration = "underline"
+    dasboardDisplay.classList.add('danger')
+
   }
 }
 const unqiueName = (datas)=> {
@@ -34,12 +40,9 @@ const unqiueName = (datas)=> {
 const priceSum = (datas) =>{
   let sum = 0
   for(let i = 0; i < datas.length; i++){
-
     sum += datas[i].price
-    
 
   }
-  console.log(sum)
   return  sum
 } 
 

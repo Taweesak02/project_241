@@ -75,7 +75,14 @@ const refresh = async()=>{
         tableDOM.innerHTML = htmldata
 
     }catch(err){
-        tableDOM.innerHTML = "ไม่สามารถโหลดตารางข้อมูลได้"
+
+        const overFlowTableDOM = document.getElementById("overflow-table")
+        overFlowTableDOM.classList.add("container")
+        overFlowTableDOM.classList.add("danger")
+        overFlowTableDOM.style.textDecoration = "underline"
+        overFlowTableDOM.style.padding = "20px"
+        overFlowTableDOM.innerHTML = "ไม่สามารถโหลดตารางข้อมูลได้"
+        
     }
 
     const rowDOM = document.querySelectorAll("tr:not(#table-head)")
