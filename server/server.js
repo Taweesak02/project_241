@@ -1,15 +1,19 @@
 const express = require('express');
 const bodyparset = require('body-parser');
 const mysql = require('mysql2/promise');
-const app = express();
-const cors = require('cors');
+const app = express()
+const cors = require('cors')
 const jwt =  require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
+
+
 
 const port = 8000; 
-
+const SECRET = "ohuton"
 const Orders = []
 
 app.use(bodyparset.json())
+app.use(cookieParser())
 app.use(cors())
 
 let conn = null
@@ -23,6 +27,7 @@ const initMySQL = async () => {
   })
 }
 
+//ตรวจสอบความถูกต้อง
 const validateData = (orderData)=>{
   let errors = [];
 
@@ -51,6 +56,7 @@ const validateData = (orderData)=>{
   return errors
 }
 
+//เรียกข้อมูลทุกรายการ
 app.get('/Orders', async (req, res) => {
   try{ 
     const results = await conn.query('SELECT * FROM Orders')
@@ -63,6 +69,7 @@ app.get('/Orders', async (req, res) => {
   }
 })
 
+//เรียกข้อมูลบาง id
 app.get('/Orders/:orderID',async(req,res)=>{
   try{
 
@@ -83,6 +90,8 @@ app.get('/Orders/:orderID',async(req,res)=>{
   }
 })
 
+
+//เพิ่มข้อมูล
 app.post('/Orders',async(req,res)=>{
   try{
     let order = req.body
@@ -114,6 +123,8 @@ app.post('/Orders',async(req,res)=>{
     
 })
 
+
+//แก้ไขข้อมูล
 app.put('/Orders/:orderID',async(req,res)=>{
   try{
     let orderid = req.params.orderID
@@ -133,6 +144,7 @@ app.put('/Orders/:orderID',async(req,res)=>{
   }
 })
 
+//ลบข้อมูล
 app.delete('/Orders/:orderID',async(req,res) =>{
   try{
     let orderid = req.params.orderID
@@ -166,41 +178,7 @@ app.listen(port, async (req, res) => {
 })
 
 
-//login
 
-app.post('/Login', async (req, res) => {
-  
-  try{
-    const {user,password} = req.body
-  
-    const [userDatas] = await conn.query('SELECT userName,password FROM Users WHERE userName = ?',[user])
-
-    if(userDatas.length === 0){
-      res.clearCookie("authToken");
-      return res.status(404).json({ message: "Not found user" });
-    }
-    
-    if(userDatas[0].password != password){
-      res.clearCookie("authToken");
-      return res.status(404).json({ message: "password incorrect" });
-      
-    }
-    
-    const token = jwt.sign({userName:user,password:password}, 'tea', { expiresIn: '1h' })
-    res.cookie('authToken', token,{httpOnly: true})
-    res.json({ message: 'Login successful'})
-    
-    
-    
-  }catch(err){
-    res.clearCookie("authToken");
-    res.json({
-      message:"failed to login",
-      error:err.message,
-
-    })
-  }
-})
 
 
 

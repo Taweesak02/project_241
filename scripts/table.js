@@ -73,7 +73,7 @@ const refresh = async()=>{
                         `
         }
         tableDOM.innerHTML = htmldata
-
+        
     }catch(err){
 
         const overFlowTableDOM = document.getElementById("overflow-table")
@@ -86,7 +86,7 @@ const refresh = async()=>{
     }
 
     const rowDOM = document.querySelectorAll("tr:not(#table-head)")
-
+    
     rowDOM.forEach((i)=>{
         i.addEventListener("click",()=>{
             orderID = i.cells[0].textContent
@@ -178,6 +178,7 @@ const returnMode = ()=>{
     editmodeDOM.classList.add("hidden")
     optionconDOM.classList.remove("hidden")
 }
+
 
 
 

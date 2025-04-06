@@ -62,41 +62,49 @@ const searchingData = async()=>{
                         <button id="dowloadfile" onclick='downloadPDF()'>ดาวน์โหลดไฟล์ pdf</button>
                         `
         htmlpdf = `<div id = 'searching-pdf'>
+                        <div id = 'pdf-container'>
                             <label id="message-header">รายละเอียดรายการสั่งสินค้า</label>
-                            <div class='flex'>
-                                <label>ชื่อลูกค้า</label>
-                                <label>${response.data.customerName}</label>
+                            <div class="section">
+                                <div class='flex'>
+                                    <label>ชื่อลูกค้า</label>
+                                    <label>${response.data.customerName}</label>
+                                </div>
+                                <div class = 'flex'>
+                                    <label>ชื่อร้านค้า</label>
+                                    <label>${response.data.shopName}</label>
+                                </div>
                             </div>
-                            <div class = 'flex'>
-                                <label>ชื่อร้านค้า</label>
-                                <label>${response.data.shopName}</label>
+                            <div class="section">
+                                <div class='flex'>
+                                    <label>สถานะการชำระเงิน</label>
+                                    <label>${response.data.paymentStatus}</label>
+                                </div>
+                                <div class='flex'>
+                                    <label>สถานะการจัดส่งสินค้า</label>
+                                    <label>${response.data.deliveryStatus}</label>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <div class='flex'>
+                                    <label>ราคาสินค้า</label>
+                                    <label>${response.data.price}</label>
+                                </div>
+                                <div class='flex'>
+                                    <label>รายละเอียดสินค้า</label>
+                                    <label>${response.data.productDetail}</label>
+                                </div>
                             </div>
                             <div class='flex'>
                                 <label>วันที่สั่งซื้อ</label>
                                 <label>${formattedDate}</label>
                             </div>
                             <div class='flex'>
-                                <label>สถานะการชำระเงิน</label>
-                                <label>${response.data.paymentStatus}</label>
-                            </div>
-                            <div class='flex'>
-                                <label>สถานะการจัดส่งสินค้า</label>
-                                <label>${response.data.deliveryStatus}</label>
-                            </div>
-                            <div class='flex'>
-                                <label>ราคาสินค้า</label>
-                                <label>${response.data.price}</label>
-                            </div>
-                            <div class='flex'>
-                                <label>รายละเอียดสินค้า</label>
-                                <label>${response.data.productDetail}</label>
-                            </div>
-                            <div class='flex'>
                                 <label>วันที่พิมพ์รายการสั่งซื้อ</label>
                                 <label>${new Date().toLocaleDateString('en-GB')}</label>
                             </div>
                             
-                       </div>
+                        </div>    
+                    </div>
                         `
         message.innerHTML = "ค้นหารายการสั่งสินค้าเสร็จสิ้น"
         infoDetailDOM.innerHTML = htmldata
@@ -126,7 +134,7 @@ const downloadPDF = () => {
         filename: 'order-details.pdf', // Name of the PDF file
         image: { type: 'jpeg', quality: 1 }, // High-quality images
         html2canvas: { scale: 2, useCORS: true }, // Improve rendering quality
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' } // Set to landscape
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } // Set to landscape
     }
 
     html2pdf().set(options).from(htmlpdf).toPdf()
@@ -136,6 +144,8 @@ const downloadPDF = () => {
         const pdfUrl = URL.createObjectURL(pdfBlob);
         window.open(pdfUrl);
     })
+
+  
 
     
 

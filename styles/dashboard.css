@@ -27,6 +27,14 @@
         background-color:var(--white);
         align-content:center;
         text-align:center;
+        transition:1.05s;
+        label{
+            font-size:18px;
+        }
+    }
+    > *:hover{
+        transform:scale(1.05);
+        box-shadow:5px 5px 5px var(--black);
     }
 }
 

@@ -11,13 +11,28 @@
     }
 }
 
+/*pdf*/
+.section{
+    border-bottom:4px dotted var(--black);
+    padding-bottom:10px;
+    margin:10px 0px;
+}
+
 #search-container{
     justify-content:center;
     gap:20px;
     flex-direction:column;
 }
-#searching-pdf{
 
+#pdf-container{
+    border:3px solid var(--black);
+    margin:20px;
+    padding:20px;
+}
+
+
+#searching-pdf{
+    
     padding:20px;
     font-size:20px;
     height:100vh;
@@ -50,7 +65,7 @@
     }
     
 }
-
+/*ปุ่มโหลด pdf*/
 #dowloadfile{
     margin-top:20px;
 }
